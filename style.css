@@ -1,0 +1,66 @@
+/* - Coffee Container - */
+:root {
+  --coffeeMachine-parent-width: 300px;
+  --coffeeMachine-parent-height: 280px;
+  --coffee-header-height: calc(
+    var(--coffeeMachine-parent-height) * 0.285714286
+  );
+  --button-radius: calc(var(--coffee-header-height) * 0.3);
+  --button-nob-length: calc(var(--button-radius) / 3);
+}
+
+.container {
+  width: 300px;
+  height: 280px;
+  position: absolute;
+  top: calc(50% - calc(280px / 2));
+  left: calc(50% - calc(300px / 2));
+  border: 1px solid red;
+  border-radius: 1%;
+}
+
+/* - Coffee Header - */
+
+.coffee-header {
+  width: 100%;
+  height: var(--coffee-header-height);
+  top: 0%;
+  left: 0%;
+  position: relative;
+  background-color: grey;
+  border-radius: 1%;
+}
+
+.coffee-header-buttons {
+  width: var(--button-radius);
+  height: var(--button-radius);
+  top: calc(
+    calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2)
+  );
+  position: absolute;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.coffee-header-buttons::after {
+  content: "";
+  width: var(--button-nob-length);
+  height: var(--button-nob-length);
+  left: calc(50% - calc(var(--button-nob-length) / 2));
+  bottom: calc(-0.9 * var(--button-nob-length));
+  position: absolute;
+  background-color: black;
+}
+
+.coffee-header-button-1 {
+  left: calc(
+    calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2)
+  );
+}
+
+.coffee-header-button-2 {
+  left: calc(
+    calc(calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2)) *
+      2.15
+  );
+}
