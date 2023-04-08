@@ -1,208 +1,185 @@
-/* - Coffee Container - */
+  /* - Coffee Container - */
 
 :root {
-  --coffeeMachine-parent-width: 300px;
-  --coffeeMachine-parent-height: 280px;
-  --box-radius: calc(var(--coffeeMachine-parent-width) * 0.01);
-  --coffee-header-height: calc(
-    var(--coffeeMachine-parent-height) * 0.285714286
-  );
-  --button-radius: calc(var(--coffee-header-height) * 0.3);
-  --button-nob-length: calc(var(--button-radius) / 3);
-  --display-radius: calc(var(--coffee-header-height) * 0.7);
-  --coffee-header-details-height: calc(var(--coffee-header-height) * 0.4);
-  --coffee-middle-height: calc(
-    var(--coffeeMachine-parent-height) * 0.571428571
-  );
-  --coffee-footer-height: calc(
-    var(--coffeeMachine-parent-height) * 0.571428571
-  );
+    --coffeeMachine-parent-width: 300px;
+    --coffeeMachine-parent-height: 280px;
+    --box-radius: calc( var(--coffeeMachine-parent-width) * 0.01 );
+    --coffee-header-height: calc( var(--coffeeMachine-parent-height) * 0.285714286 );
+    --button-radius: calc( var(--coffee-header-height) * 0.3 );
+    --button-nob-length: calc( var(--button-radius) / 3 );
+    --display-radius: calc( var(--coffee-header-height) * 0.7 );
+    --coffee-header-details-height: calc( var(--coffee-header-height) * 0.4 );
+    --coffee-middle-height: calc( var(--coffeeMachine-parent-height) * 0.571428571 );
+    --coffee-footer-height: calc( var(--coffeeMachine-parent-height) * 0.571428571 );
 }
-
+  
 .container {
-  width: var(--coffeeMachine-parent-width);
-  height: var(--coffeeMachine-parent-height);
-  position: absolute;
-  top: calc(50% - calc(280px / 2));
-  left: calc(50% - calc(300px / 2));
-  border: 1px solid red;
-  border-radius: var(--box-radius);
+    width: var(--coffeeMachine-parent-width);
+    height: var(--coffeeMachine-parent-height);
+    position: absolute;
+    top: calc(50% - calc(280px / 2));
+    left: calc(50% - calc(300px / 2));
+    border: 1px solid red;
+    border-radius: var(--box-radius);
 }
-
-/* - Coffee Header - */
-
+  
+  /* - Coffee Header - */
+  
 .coffee-header {
-  width: 100%;
-  height: var(--coffee-header-height);
-  top: 0%;
-  left: 0%;
-  position: relative;
-  background-color: grey;
-  border-radius: var(--box-radius);
+    width: 100%;
+    height: var(--coffee-header-height);
+    top: 0%;
+    left: 0%;
+    position: relative;
+    background-color: grey;
+    border-radius: var(--box-radius);
 }
-
+  
 .coffee-header-buttons {
-  width: var(--button-radius);
-  height: var(--button-radius);
-  top: calc(
-    calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2)
-  );
-  position: absolute;
-  border-radius: 50%;
-  background-color: black;
+    width: var(--button-radius);
+    height: var(--button-radius);
+    top: calc( calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2) );
+    position: absolute;
+    border-radius: 50%;
+    background-color: black;
 }
-
+  
 .coffee-header-buttons::after {
-  content: "";
-  width: var(--button-nob-length);
-  height: var(--button-nob-length);
-  left: calc(50% - calc(var(--button-nob-length) / 2));
-  bottom: calc(-0.9 * var(--button-nob-length));
-  position: absolute;
-  background-color: black;
+    content: "";
+    width: var(--button-nob-length);
+    height: var(--button-nob-length);
+    left: calc(50% - calc(var(--button-nob-length) / 2));
+    bottom: calc(-0.9 * var(--button-nob-length));
+    position: absolute;
+    background-color: black;
 }
-
+  
 .coffee-header-button-1 {
-  left: calc(
-    calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2)
-  );
+    left: calc( calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2) );
 }
-
+  
 .coffee-header-button-2 {
-  left: calc(
-    calc(calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2)) *
-      2.15
-  );
+    left: calc( calc(calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2)) * 2.15
+    );
 }
-
+  
 .coffee-header-display {
-  width: var(--display-radius);
-  height: var(--display-radius);
-  top: calc(50% - calc(var(--display-radius) / 2));
-  left: calc(50% - calc(var(--display-radius) / 2));
-  position: absolute;
-  border-radius: 50%;
-  background-color: aqua;
-  border: 5px solid aquamarine;
-  box-sizing: border-box;
+    width: var(--display-radius);
+    height: var(--display-radius);
+    top: calc(50% - calc( var(--display-radius) / 2 ) );
+    left: calc(50% - calc( var(--display-radius) / 2 ) );
+    position: absolute;
+    border-radius: 50%;
+    background-color: aqua;
+    border: 5px solid aquamarine;
+    box-sizing: border-box;
 }
 
 .coffee-header-details {
-  width: calc(var(--coffee-header-details-height) * 0.5);
-  height: var(--coffee-header-details-height);
-  top: calc(
-    calc(var(--coffee-header-height) / 2) -
-      calc(var(--coffee-header-details-height) / 2)
-  );
-  right: calc(
-    calc(var(--coffee-header-height) / 2) -
-      calc(var(--coffee-header-details-height) / 2)
-  );
-  position: absolute;
-  background-color: lightgray;
-  box-shadow: calc(
-        calc(calc(var(--coffee-header-details-height) * 0.5) * 3) * -1
-      )
-      0 0 lightgrey,
-    calc(calc(calc(var(--coffee-header-details-height) * 0.5) * 1.5) * -1) 0 0
-      lightgray;
+    width: calc( var(--coffee-header-details-height) * 0.5 );
+    height: var(--coffee-header-details-height);
+    top: calc( calc( var(--coffee-header-height) / 2) - calc( var(--coffee-header-details-height) /2 ) );
+    right: calc( calc( var(--coffee-header-height) / 2) - calc( var(--coffee-header-details-height) /2 ) );
+    position: absolute;
+    background-color: lightgray;
+    box-shadow: calc( calc( calc( var(--coffee-header-details-height) * 0.5 ) *3 ) * -1 ) 0 0 lightgrey, calc( calc( calc( var(--coffee-header-details-height) * 0.5 ) *1.5 ) * -1 ) 0 0 lightgray;
 }
 
-/* - Coffee Middle - */
+  /* - Coffee Middle - */
 
 .coffee-middle {
-  width: 90%;
-  height: var(--coffee-middle-height);
-  top: var(--coffee-header-height);
-  left: 5%;
-  position: absolute;
-  background-color: rgb(228, 228, 228);
-  border-radius: 1px;
+    width: 90%;
+    height: var(--coffee-middle-height);
+    top: var(--coffee-header-height);
+    left: 5%;
+    position: absolute;
+    background-color: rgb(228, 228, 228);
+    border-radius: 1px;
 }
 
 .coffee-middle::before {
-  content: "";
-  width: 90%;
-  height: 62.5%;
-  left: 5%;
-  bottom: 0%;
-  position: absolute;
-  background-color: rgb(100, 97, 95);
-  border-radius: calc(var(--coffee-middle-height) / 8)
-    calc(var(--coffee-middle-height) / 8) 0 0;
+    content: "";
+    width: 90%;
+    height: 62.5%;
+    left: 5%;
+    bottom: 0%;
+    position: absolute;
+    background-color: rgb(100, 97, 95);
+    border-radius: calc( var(--coffee-middle-height) / 8 ) calc( var(--coffee-middle-height) / 8 ) 0 0 ;
 }
 
 .coffee-middle-exit {
-  width: 37%;
-  height: 13%;
-  position: absolute;
-  top: 0%;
-  left: 31.5%;
-  background-color: black;
-  border-radius: 0 0 var(--box-radius) var(--box-radius);
-  /* box-shadow: 0 calc( var(--coffee-middle-height) * 0.08125 ) 0 calc( calc( var(--coffee-middle-height) * 0.04375 ) * -1) rgb(66, 66, 66), 0px calc( var(--coffee-middle-height) * 0.1125 ) 0px calc( calc( var(--coffee-middle-height) * 0.053125 ) * -1) rgb(158, 157, 157); */
+    width: 37%;
+    height: 13%;
+    position: absolute;
+    top: 0%;
+    left: 31.5%;
+    background-color: black;
+    border-radius: 0 0 var(--box-radius) var(--box-radius);
+    /* box-shadow: 0 calc( var(--coffee-middle-height) * 0.08125 ) 0 calc( calc( var(--coffee-middle-height) * 0.04375 ) * -1) rgb(66, 66, 66), 0px calc( var(--coffee-middle-height) * 0.1125 ) 0px calc( calc( var(--coffee-middle-height) * 0.053125 ) * -1) rgb(158, 157, 157); */
 }
 
-.coffee-middle-exit::before {
-  content: "";
-  width: 80%;
-  height: 40%;
-  bottom: -40%;
-  left: 10%;
-  position: absolute;
-  border-radius: 0 0 100% 100%;
-  background-color: rgb(156, 155, 155);
+.coffee-middle-exit::before{
+    content: "";
+    width: 80%;
+    height: 40%;
+    bottom: -40%;
+    left: 10%;
+    position: absolute;
+    border-radius: 0 0 100% 100%;
+    background-color: rgb(156, 155, 155);
 }
 
 .coffee-middle-exit::after {
-  content: "";
-  width: 14%;
-  height: 25%;
-  position: absolute;
-  top: 140%;
-  left: 43%;
-  background-color: rgb(100, 99, 99);
+    content: "";
+    width: 14%; 
+    height: 25%;
+    position: absolute;
+    top: 140%;
+    left: 43%;
+    background-color: rgb(100, 99, 99);
 }
 
-.coffee-middle-arm {
-  width: 12%;
-  height: 5%;
-  top: 3.25%;
-  left: 68.5%;
-  position: absolute;
-  background-color: rgb(94, 94, 94);
-  /* box-shadow: calc( var(--coffeeMachine-parent-width) * 0.118 ) 0px 0px calc( var(--coffeeMachine-parent-width) * 0.012 ) rgb(66, 66, 66); */
+.coffee-middle-arm{
+    width: 12%;
+    height: 5%;
+    top: 3.25%;
+    left: 68.5%;
+    position: absolute;
+    background-color: rgb(94, 94, 94);
+    /* box-shadow: calc( var(--coffeeMachine-parent-width) * 0.118 ) 0px 0px calc( var(--coffeeMachine-parent-width) * 0.012 ) rgb(66, 66, 66); */
 }
 
-.coffee-middle-arm::before {
-  content: "";
-  width: 150%;
-  height: 200%;
-  top: -50%;
-  right: -100%;
-  position: absolute;
-  background-color: black;
-  border-radius: 25% var(--box-radius) var(--box-radius) 25%;
+.coffee-middle-arm::before{
+    content: "";
+    width: 150%;
+    height: 200%;
+    top: -50%;
+    right: -100%;
+    position: absolute;
+    background-color: black;
+    border-radius: 25% var(--box-radius) var(--box-radius) 25%;
 }
 
-.coffee-middle-smoke-1 {
+.coffee-middle-smoke-1{
+
 }
 
-.coffee-middle-cup-base {
-  width: 100%;
-  height: 12%;
-  bottom: 0;
-  position: absolute;
-  background-color: rgb(57, 57, 58);
-}
+.coffee-middle-cup-base{
+    width: 100%;
+    height: 12%;
+    bottom: 0;
+    position: absolute;
+    background-color: rgb(57, 57, 58);
+} 
 
-/* - Coffee Footer - */
+  /* - Coffee Footer - */
 
-.coffee-footer {
-  width: 100%;
-  height: 14.28%;
-  bottom: 0px;
-  position: absolute;
-  background-color: rgb(10, 10, 10);
-  border-radius: var(--box-radius);
+.coffee-footer{
+    width: 100%;
+    height: 14.28%;
+    bottom: 0px;
+    position: absolute;
+    background-color: rgb(10, 10, 10);
+    border-radius: var(--box-radius) ;
 }
