@@ -33,7 +33,7 @@
     top: 0%;
     left: 0%;
     position: relative;
-    background-color: grey;
+    background-color: rgb(73, 73, 73);
     border-radius: var(--box-radius);
 }
   
@@ -154,7 +154,7 @@
     top: var(--coffee-header-height);
     left: 5%;
     position: absolute;
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(182, 180, 180);
     border-radius: 1px;
 }
 
@@ -165,7 +165,7 @@
     left: 5%;
     bottom: 0%;
     position: absolute;
-    background-color: rgb(100, 97, 95);
+    background-color: rgb(63, 63, 63);
     border-radius: calc( var(--coffee-middle-height) / 8 ) calc( var(--coffee-middle-height) / 8 ) 0 0 ;
 }
 
@@ -175,7 +175,7 @@
     position: absolute;
     top: 0%;
     left: 31.5%;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     border-radius: 0 0 var(--box-radius) var(--box-radius);
 }
 
@@ -187,7 +187,7 @@
     left: 10%;
     position: absolute;
     border-radius: 0 0 100% 100%;
-    background-color: rgb(156, 155, 155);
+    background-color: rgb(136, 136, 136);
 }
 
 .coffee-middle-exit::after {
@@ -197,7 +197,7 @@
     position: absolute;
     top: 140%;
     left: 43%;
-    background-color: rgb(100, 99, 99);
+    background-color: rgb(44, 31, 31);
 }
 
 .coffee-middle-arm{
@@ -287,7 +287,7 @@
     left: 41%;
     position: absolute;
     background-color: rgb(248, 248, 248);
-    border-radius: 0 0 30% 30% ;
+    border-radius: 3% 3% 30% 30% ;
 }
 
 .coffee-middle-cup-base::after {
@@ -391,9 +391,9 @@
     left: 31.5%;
     background-color: black;
     border-radius: 0 0 var(--box-radius) var(--box-radius);
-    box-shadow: 0 calc( var(--coffee-middle-height) * 0.08125 ) 0 calc( calc( var(--coffee-middle-height) * 0.04375 ) * -1) rgb(66, 66, 66), 0px calc( var(--coffee-middle-height) * 0.1125 ) 0px calc( calc( var(--coffee-middle-height) * 0.053125 ) * -1) rgb(158, 157, 157);
-}
-
+/*     box-shadow: 0 calc( var(--coffee-middle-height) * 0.08125 ) 0 calc( calc( var(--coffee-middle-height) * 0.04375 ) * -1) rgb(66, 66, 66), 0px calc( var(--coffee-middle-height) * 0.1125 ) 0px calc( calc( var(--coffee-middle-height) * 0.053125 ) * -1) rgb(158, 157, 157); */
+/* } */
+/*
 
 .coffee-middle-arm{
     width: 12%;
