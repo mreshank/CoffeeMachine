@@ -1,66 +1,118 @@
-/* - Coffee Container - */
+  /* - Coffee Container Dimensions (parent) - */
+  
 :root {
-  --coffeeMachine-parent-width: 300px;
-  --coffeeMachine-parent-height: 280px;
-  --coffee-header-height: calc(
-    var(--coffeeMachine-parent-height) * 0.285714286
-  );
-  --button-radius: calc(var(--coffee-header-height) * 0.3);
-  --button-nob-length: calc(var(--button-radius) / 3);
+    --coffeeMachine-parent-width: 300px;
+    --coffeeMachine-parent-height: 280px;
+    --coffee-header-height: calc( var(--coffeeMachine-parent-height) * 0.285714286 );
+    --button-radius: calc( var(--coffee-header-height) * 0.3 );
+    --button-nob-length: calc( var(--button-radius) / 3 );
+    --display-radius: calc( var(--coffee-header-height) * 0.7 );
+    --coffee-header-details-height: calc( var(--coffee-header-height) * 0.4 );
+    --coffee-middle-height: calc( var(--coffeeMachine-parent-height) * 0.571428571 );
 }
+  
+  /* - Coffee Container - */
 
 .container {
-  width: 300px;
-  height: 280px;
-  position: absolute;
-  top: calc(50% - calc(280px / 2));
-  left: calc(50% - calc(300px / 2));
-  border: 1px solid red;
-  border-radius: 1%;
+    width: var(--coffeeMachine-parent-width);
+    height: var(--coffeeMachine-parent-height);
+    position: absolute;
+    top: calc(50% - calc(280px / 2));
+    left: calc(50% - calc(300px / 2));
+    border: 1px solid red;
+    border-radius: 1%;
 }
-
-/* - Coffee Header - */
-
+  
+  /* - Coffee Header - */
+  
 .coffee-header {
-  width: 100%;
-  height: var(--coffee-header-height);
-  top: 0%;
-  left: 0%;
-  position: relative;
-  background-color: grey;
-  border-radius: 1%;
+    width: 100%;
+    height: var(--coffee-header-height);
+    top: 0%;
+    left: 0%;
+    position: relative;
+    background-color: grey;
+    border-radius: 1%;
 }
-
+  
 .coffee-header-buttons {
-  width: var(--button-radius);
-  height: var(--button-radius);
-  top: calc(
-    calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2)
-  );
-  position: absolute;
-  border-radius: 50%;
-  background-color: black;
+    width: var(--button-radius);
+    height: var(--button-radius);
+    top: calc( calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2) );
+    position: absolute;
+    border-radius: 50%;
+    background-color: black;
 }
-
+  
 .coffee-header-buttons::after {
-  content: "";
-  width: var(--button-nob-length);
-  height: var(--button-nob-length);
-  left: calc(50% - calc(var(--button-nob-length) / 2));
-  bottom: calc(-0.9 * var(--button-nob-length));
-  position: absolute;
-  background-color: black;
+    content: "";
+    width: var(--button-nob-length);
+    height: var(--button-nob-length);
+    left: calc(50% - calc(var(--button-nob-length) / 2));
+    bottom: calc(-0.9 * var(--button-nob-length));
+    position: absolute;
+    background-color: black;
 }
-
+  
 .coffee-header-button-1 {
-  left: calc(
-    calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2)
-  );
+    left: calc( calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2) );
+}
+  
+.coffee-header-button-2 {
+    left: calc( calc(calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2)) * 2.15
+    );
+}
+  
+.coffee-header-display {
+    width: var(--display-radius);
+    height: var(--display-radius);
+    top: calc(50% - calc( var(--display-radius) / 2 ) );
+    left: calc(50% - calc( var(--display-radius) / 2 ) );
+    position: absolute;
+    border-radius: 50%;
+    background-color: aqua;
+    border: 5px solid aquamarine;
+    box-sizing: border-box;
 }
 
-.coffee-header-button-2 {
-  left: calc(
-    calc(calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2)) *
-      2.15
-  );
+.coffee-header-details {
+    width: calc( var(--coffee-header-details-height) * 0.5 );
+    height: var(--coffee-header-details-height);
+    top: calc( calc( var(--coffee-header-height) / 2) - calc( var(--coffee-header-details-height) /2 ) );
+    right: calc( calc( var(--coffee-header-height) / 2) - calc( var(--coffee-header-details-height) /2 ) );
+    position: absolute;
+    background-color: lightgray;
+    box-shadow: calc( calc( calc( var(--coffee-header-details-height) * 0.5 ) *3 ) * -1 ) 0 0 lightgrey, calc( calc( calc( var(--coffee-header-details-height) * 0.5 ) *1.5 ) * -1 ) 0 0 lightgray;
+}
+
+  /* - Coffee Middle - */
+
+.coffee-middle {
+    width: 90%;
+    height: var(--coffee-middle-height);
+    top: var(--coffee-header-height);
+    left: 5%;
+    position: absolute;
+    background-color: rgb(228, 228, 228);
+    border-radius: 1px;
+}
+
+.coffee-middle::before {
+    content: "";
+    width: 90%;
+    height: 62.5%;
+    left: 5%;
+    bottom: 0%;
+    position: absolute;
+    background-color: rgb(100, 97, 95);
+    border-radius: calc( var(--coffee-middle-height) / 8 ) calc( var(--coffee-middle-height) / 8 ) 0 0 ;
+}
+.coffee-middle-exit {
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    top: 0px;
+    left: calc(50% - 50px);
+    background-color: black;
+    box-shadow: -0px 13px 0px -7px rgb(66, 66, 66), 0px 18px 0px -8.5px rgb(196, 195, 195);
 }
