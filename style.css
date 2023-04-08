@@ -1,9 +1,10 @@
-  /* - Coffee Container - */
+  /* - - - Coffee Machine Dimentions (pre-defined data for further styles) - - - */
 
 :root {
     --coffeeMachine-parent-width: 300px;
     --coffeeMachine-parent-height: 280px;
-    --box-radius: calc( var(--coffeeMachine-parent-width) * 0.01 );
+    --box-radius: calc( var(--coffeeMachine-parent-width) * 0.025 );
+    --box-border: calc( var(--coffeeMachine-parent-width) * 0.0175 );
     --coffee-header-height: calc( var(--coffeeMachine-parent-height) * 0.285714286 );
     --button-radius: calc( var(--coffee-header-height) * 0.3 );
     --button-nob-length: calc( var(--button-radius) / 3 );
@@ -13,17 +14,18 @@
     --coffee-footer-height: calc( var(--coffeeMachine-parent-height) * 0.571428571 );
 }
   
+  /* - - - Coffee Container - - - */
+
 .container {
     width: var(--coffeeMachine-parent-width);
     height: var(--coffeeMachine-parent-height);
     position: absolute;
     top: calc(50% - calc(280px / 2));
     left: calc(50% - calc(300px / 2));
-    border: 1px solid red;
     border-radius: var(--box-radius);
 }
   
-  /* - Coffee Header - */
+  /* - - - Coffee Header - - - */
   
 .coffee-header {
     width: 100%;
@@ -44,7 +46,7 @@
     background-color: black;
 }
   
-.coffee-header-buttons::after {
+.coffee-header-buttons::before {
     content: "";
     width: var(--button-nob-length);
     height: var(--button-nob-length);
@@ -52,8 +54,19 @@
     bottom: calc(-0.9 * var(--button-nob-length));
     position: absolute;
     background-color: black;
+    border-radius:  0 0 50% 50%;
 }
-  
+
+.coffee-header-buttons::after {
+    content: "";
+    left: calc(50% - calc( var(--button-nob-length) / 4 ) );
+    bottom: calc(-0.5 * var(--button-nob-length ));
+    position: absolute;
+	border-left: calc( var(--button-nob-length) / 4 ) solid transparent;
+	border-right: calc( var(--button-nob-length) / 4 ) solid transparent;
+	border-bottom: calc( var(--button-nob-length) / 2 ) solid rgb(172, 172, 172);
+}
+
 .coffee-header-button-1 {
     left: calc( calc(var(--coffee-header-height) / 2) - calc(var(--button-radius) / 2) );
 }
@@ -63,15 +76,63 @@
     );
 }
   
+.coffee-header-button-markings::after, .coffee-header-button-markings::before{
+    content: "";
+    width: 90%;
+    height: 101.5%;
+    position: absolute;
+    background-color: rgb(172, 172, 172);
+}
+
+.coffee-header-button-marking-dial{
+    width: 78%;
+    height: 78%;
+    top: 8.25%;
+    left: 8.25%;
+    position: absolute;
+    background-color: transparent;
+    border: calc( var(--button-nob-length) * 0.1 ) solid rgb(172, 172, 172);
+    border-radius: 100%;
+}
+
+.coffee-header-button-marking-dial::before{
+    content: "";
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    position: absolute;
+    background-color: black;
+    border: solid transpar;
+    border-radius: 100%;
+}
+
+.coffee-header-button-markings{
+    width: 8%;
+    height: 80%;
+    top: 10%;
+    left: 45%;
+    position: absolute;
+    background-color: rgb(172, 172, 172);
+}
+
+.coffee-header-button-markings::before{
+    transform: rotate(120deg);
+}
+
+.coffee-header-button-markings::after{
+    transform: rotate(240deg);
+}
+
 .coffee-header-display {
     width: var(--display-radius);
     height: var(--display-radius);
     top: calc(50% - calc( var(--display-radius) / 2 ) );
     left: calc(50% - calc( var(--display-radius) / 2 ) );
     position: absolute;
-    border-radius: 50%;
-    background-color: aqua;
-    border: 5px solid aquamarine;
+    border-radius: 35%;
+    background-color: rgb(134, 175, 175);
+    border: var(--box-border) solid rgb(195, 250, 232);
     box-sizing: border-box;
 }
 
@@ -85,7 +146,7 @@
     box-shadow: calc( calc( calc( var(--coffee-header-details-height) * 0.5 ) *3 ) * -1 ) 0 0 lightgrey, calc( calc( calc( var(--coffee-header-details-height) * 0.5 ) *1.5 ) * -1 ) 0 0 lightgray;
 }
 
-  /* - Coffee Middle - */
+  /* - - - Coffee Middle - - - */
 
 .coffee-middle {
     width: 90%;
@@ -116,7 +177,6 @@
     left: 31.5%;
     background-color: black;
     border-radius: 0 0 var(--box-radius) var(--box-radius);
-    /* box-shadow: 0 calc( var(--coffee-middle-height) * 0.08125 ) 0 calc( calc( var(--coffee-middle-height) * 0.04375 ) * -1) rgb(66, 66, 66), 0px calc( var(--coffee-middle-height) * 0.1125 ) 0px calc( calc( var(--coffee-middle-height) * 0.053125 ) * -1) rgb(158, 157, 157); */
 }
 
 .coffee-middle-exit::before{
@@ -147,7 +207,6 @@
     left: 68.5%;
     position: absolute;
     background-color: rgb(94, 94, 94);
-    /* box-shadow: calc( var(--coffeeMachine-parent-width) * 0.118 ) 0px 0px calc( var(--coffeeMachine-parent-width) * 0.012 ) rgb(66, 66, 66); */
 }
 
 .coffee-middle-arm::before{
@@ -160,45 +219,74 @@
     background-color: black;
     border-radius: 25% var(--box-radius) var(--box-radius) 25%;
 }
-/* 
-.coffee-middle-cup{
-    width: 20%;
-    height: 30%;
-    bottom: 12%;
-    left: 40%;
+
+.coffee-middle-liquid{
+    width: 4%;
+    height: 60%;
+    opacity: 0;
     position: absolute;
-    background-color: rgb(43, 43, 43);
-    border-radius: 0 0 30% 30% ;
+    top: 21.25%;
+    left: 48%;
+    background-color: #74372b;
+    animation: liquid 10s 2.5s linear infinite;
+    border-radius: 0 0 70% 70%;
 }
 
-.coffee-middle-cup::after {
-    content: "";
-    width: 500%;
-    height: 50%;
-    bottom: -40%;
-    left: -200%;
+.coffee-middle-smokes{
+    width: 2.2%;
+    height: 11%;
     position: absolute;
-    background-color: rgb(57, 57, 58);
-}  */
+    border-radius: calc( var(--box-radius) * 10);
+    background-color: #c8e2e2;
+}
 
+.coffee-middle-smoke-1{
+    opacity: 0;
+    bottom: 60%;
+    left: 43.5%;
+    animation: smoke 3s 3.5s linear infinite;
+}
+
+.coffee-middle-smoke-2{
+    opacity: 0;
+    bottom: 30%;
+    left: 47%;
+    animation: smoke 3s 2s linear infinite;
+}
+
+.coffee-middle-smoke-3{
+    opacity: 0;
+    bottom: 40%;
+    left: 50%;
+    animation: smoke 3s 4.25s linear infinite;
+}
+
+.coffee-middle-smoke-4{
+    opacity: 0;
+    bottom: 40%;
+    left: 54.5%;
+    animation: smoke 3s 2.75s linear infinite;
+}
 
 .coffee-middle-cup-base{
-    width: 100%;
+    width: calc( var(--coffeeMachine-parent-width) * 0.7995 );
     height: 15%;
-    bottom: 0;
-    left: 0%;
+    bottom: -2.5%;
+    left: -5.4%;
     position: absolute;
-    background-color: rgb(43, 43, 43);
+    border-bottom: calc( var(--coffeeMachine-parent-width) * 0.08 ) solid rgb(43, 43, 43);
+    border-left: calc( var(--coffeeMachine-parent-width) * 0.0995 ) solid transparent;
+    border-right: calc( var(--coffeeMachine-parent-width) * 0.0995 ) solid transparent;    
 }
 
 .coffee-middle-cup-base::before {
     content: "";
-    width: 20%;
+    width: 18%;
     height: 175%;
-    bottom: 50%;
-    left: 40%;
+    bottom: -50%;
+    left: 41%;
     position: absolute;
-    background-color: rgb(57, 57, 58);
+    background-color: rgb(248, 248, 248);
     border-radius: 0 0 30% 30% ;
 }
 
@@ -206,24 +294,14 @@
     content: "";
     width: 5%;
     height: 60%;
-    bottom: 90%;
+    bottom: 0%;
     left: 56%;
     position: absolute;
-    border: calc( var(--coffee-middle-height) *0.03 ) solid rgb(57, 57, 58);
+    border: calc( var(--coffee-middle-height) *0.03 ) solid rgb(248, 248, 248);
     border-radius: 0 40% 40% 0 ;
 }
 
-
-
-/* .coffee-middle-cup-base{
-    width: 100%;
-    height: 12%;
-    bottom: 0;
-    position: absolute;
-    background-color: rgb(57, 57, 58);
-}  */
-
-  /* - Coffee Footer - */
+  /* - - - Coffee Footer - - - */
 
 .coffee-footer{
     width: 100%;
@@ -234,68 +312,29 @@
     border-radius: var(--box-radius) ;
 }
 
+  /* - - - Animation For the Coffee / Liquid - - - */
+
 @keyframes liquid { 
     0%{
         height: 0;
         opacity: 0.5;
     }
     5%{
-        height: 10%;
+        height: 50%;
         opacity: 1;
     }
     20%{
-        height: 62%;
+        height: 65%;
         opacity: 1;
     }
     100%{
-        height: 80%;
+        height: 75%;
         opacity: 1;
     }
 }
 
-.coffee-middle-liquid{
-    width: 5%;
-    height: 60%;
-    opacity: 0;
-    position: absolute;
-    top: 21.25%;
-    left: 47.5%;
-    background-color: #74372b;
-    animation: liquid 5s 2.5s linear infinite;
-}
+  /* - - - Animation for the Smokes - - - */
 
-.coffee-middle-smokes{
-    width: 3%;
-    height: 12%;
-    position: absolute;
-    border-radius: 30%;
-    background-color: #b3eaea;
-}
-
-.coffee-middle-smoke-1{
-    opacity: 0;
-    bottom: 60%;
-    left: 43%;
-    animation: smoke 3s 3.5s linear infinite;
-}
-.coffee-middle-smoke-2{
-    opacity: 0;
-    bottom: 30%;
-    left: 47%;
-    animation: smoke 3s 2s linear infinite;
-}
-.coffee-middle-smoke-3{
-    opacity: 0;
-    bottom: 40%;
-    left: 51%;
-    animation: smoke 3s 4.25s linear infinite;
-}
-.coffee-middle-smoke-4{
-    opacity: 0;
-    bottom: 40%;
-    left: 55%;
-    animation: smoke 3s 2.75s linear infinite;
-}
 @keyframes smoke {
     0%{
         bottom: 0%;
@@ -314,3 +353,195 @@
         opacity: 0;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* > > > CHANGED AND TRASH DATA BEFORE THE CURRENT DATA ABOVE < USELESS/ OLD STYLES > > >
+
+
+.container {
+    width: var(--coffeeMachine-parent-width);
+    height: var(--coffeeMachine-parent-height);
+    position: absolute;
+    top: calc(50% - calc(280px / 2));
+    left: calc(50% - calc(300px / 2));
+    border: 1px solid red;
+    border-radius: var(--box-radius);
+}
+
+
+.coffee-middle-exit {
+    width: 37%;
+    height: 13%;
+    position: absolute;
+    top: 0%;
+    left: 31.5%;
+    background-color: black;
+    border-radius: 0 0 var(--box-radius) var(--box-radius);
+    box-shadow: 0 calc( var(--coffee-middle-height) * 0.08125 ) 0 calc( calc( var(--coffee-middle-height) * 0.04375 ) * -1) rgb(66, 66, 66), 0px calc( var(--coffee-middle-height) * 0.1125 ) 0px calc( calc( var(--coffee-middle-height) * 0.053125 ) * -1) rgb(158, 157, 157);
+}
+
+
+.coffee-middle-arm{
+    width: 12%;
+    height: 5%;
+    top: 3.25%;
+    left: 68.5%;
+    position: absolute;
+    background-color: rgb(94, 94, 94);
+    box-shadow: calc( var(--coffeeMachine-parent-width) * 0.118 ) 0px 0px calc( var(--coffeeMachine-parent-width) * 0.012 ) rgb(66, 66, 66);
+}
+
+
+.coffee-middle-cup{
+    width: 20%;
+    height: 30%;
+    bottom: 12%;
+    left: 40%;
+    position: absolute;
+    background-color: rgb(43, 43, 43);
+    border-radius: 0 0 30% 30% ;
+}
+
+
+.coffee-middle-cup::after {
+    content: "";
+    width: 500%;
+    height: 50%;
+    bottom: -40%;
+    left: -200%;
+    position: absolute;
+    background-color: rgb(57, 57, 58);
+}
+
+
+.coffee-middle-cup-base{
+    width: calc( var(--coffeeMachine-parent-width) * 0.7995 );
+    height: 15%;
+    bottom: -2.5%;
+    left: -5.4%;
+    position: absolute;
+    background-color: rgb(43, 43, 43);
+    border-bottom: calc( var(--coffeeMachine-parent-width) * 0.08 ) solid rgb(43, 43, 43);
+    border-left: calc( var(--coffeeMachine-parent-width) * 0.0995 ) solid transparent;
+    border-right: calc( var(--coffeeMachine-parent-width) * 0.0995 ) solid transparent;    
+    border-radius: calc( var(--box-radius) * 0.5 ) calc( var(--box-radius) * 0.5 ) 0 0; 
+}
+
+
+.coffee-middle-cup-base{
+    width: 100%;
+    height: 12%;
+    bottom: 0;
+    position: absolute;
+    background-color: rgb(57, 57, 58);
+}  
+
+
+*/
+
+/* .coffee-header-button-markings {
+    width: 10%;
+    height: 80%; */
+    /* top: calc( 50% - calc( var(--box-border) * 0.5 ) ); */
+    /* left: calc( 50% - calc( var(--box-border) * 1.5 ) ); */
+    /* position: absolute; */
+    /* background-color: transparent; */
+    /* background-color: black !important; */
+    /* border: calc( var(--box-border) * 0.1) solid rgb(173, 198, 245); solid rgb(240, 240, 240) */
+    /* box-shadow: 10px 0 0 black; */
+    /* border-radius: 50%; */
+/* } */
+/* .coffee-header-button-marking-1::before {
+    content: "";
+    width: 100%;
+    height: 80%;
+    top: -50px;
+    left: 100%;
+    position: absolute;
+    transform: rotate(45deg);
+    background-color: yellow;
+} */
+
+/* .coffee-header-button-marking-dial{
+    width: 78%;
+    height: 78%;
+    top: 8.25%;
+    left: 8.25%;
+    position: absolute; */
+    /* box-shadow: -50px 0 0 0 #555, -100px 80px 4px 10px #555; */
+    /* transform: rotate(90deg); */
+    /* border: 3px solid red; */
+    /* background-color: transparent;
+    border: calc( var(--button-nob-length) * 0.1 ) solid rgb(172, 172, 172);
+    border-radius: 100%;
+} */
+
+/* .coffee-header-button-marking-1{
+    top: 10%;
+    left: 45%;
+    background-color: red; */
+    /* box-shadow: -50px 0 0 0 #555, -100px 80px 4px 10px #555;
+    transform: rotate(90deg); */
+    /* border: 3px solid red; */
+    /* border-radius: 0%; */
+/* } */
+/* .coffee-header-button-marking-1::before{
+    /* box-shadow: -50px 0 0 0 #555, -100px 80px 4px 10px #555; */
+    /* transform: rotate(45deg); */
+    /* border: 3px solid red; */
+    /* -webkit-transform: rotate(90deg); */
+    /* transform: rotate(120deg); */
+/*} */
+
+/* .coffee-header-button-marking-2{
+    top: 5%;
+    left: 5%;
+    background-color: red;
+} */
+/* .coffee-header-button-marking-2{
+    top: 10%;
+    left: 45%;
+    background-color: red;
+    /* box-shadow: -50px 0 0 0 #555, -100px 80px 4px 10px #555; */
+    /* transform: rotate(45deg); */
+    /* border: 3px solid red; */
+    /* border-radius: 0%;
+} */ 
+
+/* .coffee-header-button-marking-2::after{ */
+    /* box-shadow: -50px 0 0 0 #555, -100px 80px 4px 10px #555; */
+    /* transform: rotate(90deg); */
+    /* border: 3px solid red; */
+    /* background-color: red;
+} */
+
+/* .coffee-header-buttons::after {
+    content: ""; */
+/*     
+    width: var(--button-nob-length);
+    height: var(--button-nob-length); */
+    /* left: calc(50% - calc( var(--button-nob-length) / 4 ) );
+    bottom: calc(-0.5 * var(--button-nob-length ));
+    position: absolute; */
+    /* background-color: white; */
+	/* border-left: calc( var(--button-nob-length) / 4 ) solid transparent;
+	border-right: calc( var(--button-nob-length) / 4 ) solid transparent;
+	border-bottom: calc( var(--button-nob-length) / 2 ) solid #ff0000; */
+    /* transform: rotate(180deg); */
+    /* border-radius:  0 0 50% 50%; */
+    /* box-shadow: 10px 5px 0px -2px white; */
+/* } */
