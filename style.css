@@ -76,7 +76,7 @@
     );
 }
   
-.coffee-header-button-markings::after, .coffee-header-button-markings::before{
+.coffee-header-button-markings::after, .coffee-header-button-markings::before {
     content: "";
     width: 90%;
     height: 101.5%;
@@ -84,7 +84,7 @@
     background-color: rgb(172, 172, 172);
 }
 
-.coffee-header-button-marking-dial{
+.coffee-header-button-marking-dial {
     width: 78%;
     height: 78%;
     top: 8.25%;
@@ -95,7 +95,7 @@
     border-radius: 100%;
 }
 
-.coffee-header-button-marking-dial::before{
+.coffee-header-button-marking-dial::before {
     content: "";
     width: 80%;
     height: 80%;
@@ -107,7 +107,7 @@
     border-radius: 100%;
 }
 
-.coffee-header-button-markings{
+.coffee-header-button-markings {
     width: 8%;
     height: 80%;
     top: 10%;
@@ -116,11 +116,11 @@
     background-color: rgb(172, 172, 172);
 }
 
-.coffee-header-button-markings::before{
+.coffee-header-button-markings::before {
     transform: rotate(120deg);
 }
 
-.coffee-header-button-markings::after{
+.coffee-header-button-markings::after {
     transform: rotate(240deg);
 }
 
@@ -209,7 +209,7 @@
     background-color: rgb(94, 94, 94);
 }
 
-.coffee-middle-arm::before{
+.coffee-middle-arm::before {
     content: "";
     width: 150%;
     height: 200%;
@@ -220,7 +220,7 @@
     border-radius: 25% var(--box-radius) var(--box-radius) 25%;
 }
 
-.coffee-middle-liquid{
+.coffee-middle-liquid {
     width: 4%;
     height: 60%;
     opacity: 0;
@@ -232,7 +232,7 @@
     border-radius: 0 0 70% 70%;
 }
 
-.coffee-middle-smokes{
+.coffee-middle-smokes {
     width: 2.2%;
     height: 11%;
     position: absolute;
@@ -240,35 +240,35 @@
     background-color: #c8e2e2;
 }
 
-.coffee-middle-smoke-1{
+.coffee-middle-smoke-1 {
     opacity: 0;
     bottom: 60%;
     left: 43.5%;
     animation: smoke 3s 3.5s linear infinite;
 }
 
-.coffee-middle-smoke-2{
+.coffee-middle-smoke-2 {
     opacity: 0;
     bottom: 30%;
     left: 47%;
     animation: smoke 3s 2s linear infinite;
 }
 
-.coffee-middle-smoke-3{
+.coffee-middle-smoke-3 {
     opacity: 0;
     bottom: 40%;
     left: 50%;
     animation: smoke 3s 4.25s linear infinite;
 }
 
-.coffee-middle-smoke-4{
+.coffee-middle-smoke-4 {
     opacity: 0;
     bottom: 40%;
     left: 54.5%;
     animation: smoke 3s 2.75s linear infinite;
 }
 
-.coffee-middle-cup-base{
+.coffee-middle-cup-base {
     width: calc( var(--coffeeMachine-parent-width) * 0.7995 );
     height: 15%;
     bottom: -2.5%;
